@@ -27,8 +27,8 @@
 
         .heart {
             position: absolute;
-            width: 2000px;
-            height: 2000px;
+            width: 50px;  /* Adjusted size */
+            height: 50px;
             background-color: red;
             transform: rotate(-45deg);
             opacity: 0;
@@ -39,19 +39,19 @@
         .heart::after {
             content: '';
             position: absolute;
-            width: 2000px;
-            height: 2000px;
+            width: 50px;  /* Adjusted to match the main heart size */
+            height: 50px;
             background-color: red;
             border-radius: 50%;
         }
 
         .heart::before {
-            top: -1000px;
+            top: -25px;  /* Adjusted to position the top part correctly */
             left: 0;
         }
 
         .heart::after {
-            left: 1000px;
+            left: 25px;  /* Adjusted to position the right side correctly */
             top: 0;
         }
 
@@ -117,7 +117,6 @@
             const size = Math.random() * 15 + 15;
             heart.style.width = size + 'px';
             heart.style.height = size + 'px';
-            heart.style.backgroundColor = 'red'; // Ensuring the heart is red
             document.querySelector('.hearts').appendChild(heart);
 
             setTimeout(() => {

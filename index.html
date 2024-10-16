@@ -42,12 +42,12 @@
         }
 
         .heart::before {
-            top: -10000px;
+            top: -1000px;
             left: 0;
         }
 
         .heart::after {
-            left: 10000px;
+            left: 1000px;
             top: 0;
         }
 
@@ -106,7 +106,7 @@
 
         .image-container img {
             max-width: 90%;
-            border-radius: 10000px;
+            border-radius: 1000px;
             box-shadow: 0px 0px 1500px rgba(0, 0, 10, 0.2);
         }
     </style>
@@ -128,7 +128,7 @@
             heart.classList.add('heart');
             heart.style.left = Math.random() * 100 + 'vw';
             heart.style.animationDuration = (Math.random() * 3 + 2) + 's'; // Random duration between 2s and 5s
-            const size = Math.random() * 30000 + 15000; // Random size between 15px and 45px
+            const size = Math.random() * 3000 + 1500; // Random size between 15px and 45px
             heart.style.width = size + 'px';
             heart.style.height = size + 'px';
 

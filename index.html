@@ -22,46 +22,49 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 1;
         }
 
         .heart {
             position: absolute;
-            bottom: -200px;
+            width: 20000px;
+            height: 20000px;
             background-color: red;
             transform: rotate(-45deg);
-            animation: floatUp 5s infinite ease-in-out;
+            opacity: 0;
+            animation: float 3s infinite ease-in-out;
         }
 
         .heart::before,
         .heart::after {
             content: '';
             position: absolute;
+            width: 20000px;
+            height: 20000px;
             background-color: red;
             border-radius: 50%;
         }
 
         .heart::before {
-            top: -1000px;
+            top: -10000px;
             left: 0;
         }
 
         .heart::after {
-            left: 1000px;
+            left: 10000px;
             top: 0;
         }
 
-        @keyframes floatUp {
+        @keyframes float {
             0% {
                 transform: translateY(0) scale(0.5) rotate(-45deg);
-                opacity: 1; /* Start fully visible */
+                opacity: 1;
             }
             50% {
-                opacity: 0.8; /* Midway opacity */
+                opacity: 0.7;
             }
             100% {
-                transform: translateY(-100vh) scale(1) rotate(-45deg);
-                opacity: 0; /* Fade out at the top */
+                transform: translateY(-200px) scale(1) rotate(-45deg);
+                opacity: 0;
             }
         }
 
@@ -84,7 +87,6 @@
             z-index: 10;
             color: #d32f2f;
             font-size: 3em;
-            position: relative;
         }
 
         .join-us {
@@ -95,20 +97,6 @@
             margin-top: 20px;
             animation-delay: 3s;
         }
-
-        .image-container {
-            position: absolute;
-            bottom: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-        }
-
-        .image-container img {
-            max-width: 90%;
-            border-radius: 100px;
-            box-shadow: 0px 0px 1500px rgba(0, 0, 10, 0.2);
-        }
     </style>
 </head>
 <body>
@@ -117,9 +105,6 @@
         <div class="fade-in join-us">Join Us</div>
         <div class="fade-in wedding-of">For the wedding of</div>
     </div>
-    <div class="image-container">
-        <img src="images/wedding_photo.jpg" alt="Wedding Photo">
-    </div>
 
     <script>
         // Function to generate random hearts
@@ -127,11 +112,9 @@
             const heart = document.createElement('div');
             heart.classList.add('heart');
             heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 3 + 2) + 's'; // Random duration between 2s and 5s
-            const size = Math.random() * 3000 + 15000; // Random size between 15px and 45px
-            heart.style.width = size + 'px';
-            heart.style.height = size + 'px';
-
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            heart.style.width = Math.random() * 1500 + 15000 + 'px';
+            heart.style.height = heart.style.width;
             document.querySelector('.hearts').appendChild(heart);
 
             setTimeout(() => {

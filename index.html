@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            clip-path: polygon(50% 0%, 0% 37%, 0% 75%, 25% 100%, 50% 75%, 75% 100%, 100% 75%, 100% 37%);
+            opacity: 0;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(0);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-200px) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .text-container {
+            text-align: center;
+            z-index: 10;
+            color: #d32f2f;
+            font-size: 3em;
+        }
+
+        .join-us {
+            animation-delay: 1s;
+        }
+
+        .wedding-of {
+            margin-top: 20px;
+            animation-delay: 3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts"></div>
+    <div class="text-container">
+        <div class="fade-in join-us">Join Us</div>
+        <div class="fade-in wedding-of">For the wedding of</div>
+    </div>
+
+    <script>
+        // Function to generate random hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            heart.style.width = Math.random() * 15 + 15 + 'px';
+            heart.style.height = heart.style.width;
+            document.querySelector('.hearts').appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000); // Remove hearts after 5 seconds to prevent memory overflow
+        }
+
+        setInterval(createHeart, 300); // Create a heart every 300ms
+    </script>
+</body>
+</html>

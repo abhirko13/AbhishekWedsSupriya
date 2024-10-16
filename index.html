@@ -29,21 +29,41 @@
             width: 20px;
             height: 20px;
             background-color: red;
-            clip-path: polygon(50% 0%, 0% 37%, 0% 75%, 25% 100%, 50% 75%, 75% 100%, 100% 75%, 100% 37%);
+            transform: rotate(-45deg);
             opacity: 0;
             animation: float 3s infinite ease-in-out;
         }
 
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 10px;
+            top: 0;
+        }
+
         @keyframes float {
             0% {
-                transform: translateY(0) scale(0);
+                transform: translateY(0) scale(0.5) rotate(-45deg);
                 opacity: 1;
             }
             50% {
-                opacity: 0.5;
+                opacity: 0.7;
             }
             100% {
-                transform: translateY(-200px) scale(1.5);
+                transform: translateY(-200px) scale(1) rotate(-45deg);
                 opacity: 0;
             }
         }
@@ -73,36 +93,4 @@
             animation-delay: 1s;
         }
 
-        .wedding-of {
-            margin-top: 20px;
-            animation-delay: 3s;
-        }
-    </style>
-</head>
-<body>
-    <div class="hearts"></div>
-    <div class="text-container">
-        <div class="fade-in join-us">Join Us</div>
-        <div class="fade-in wedding-of">For the wedding of</div>
-    </div>
-
-    <script>
-        // Function to generate random hearts
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
-            heart.style.width = Math.random() * 15 + 15 + 'px';
-            heart.style.height = heart.style.width;
-            document.querySelector('.hearts').appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 5000); // Remove hearts after 5 seconds to prevent memory overflow
-        }
-
-        setInterval(createHeart, 300); // Create a heart every 300ms
-    </script>
-</body>
-</html>
+  

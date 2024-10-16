@@ -27,12 +27,13 @@
 
         .heart {
             position: absolute;
+            bottom: -20px; /* Start just below the bottom of the screen */
             width: 20px;
             height: 20px;
             background-color: red;
             transform: rotate(-45deg);
             opacity: 0;
-            animation: float 3s infinite ease-in-out;
+            animation: floatUp 5s infinite ease-in-out;
         }
 
         .heart::before,
@@ -55,7 +56,7 @@
             top: 0;
         }
 
-        @keyframes float {
+        @keyframes floatUp {
             0% {
                 transform: translateY(0) scale(0.5) rotate(-45deg);
                 opacity: 1;
@@ -64,7 +65,7 @@
                 opacity: 0.7;
             }
             100% {
-                transform: translateY(-200px) scale(1) rotate(-45deg);
+                transform: translateY(-100vh) scale(1) rotate(-45deg);
                 opacity: 0;
             }
         }
@@ -88,6 +89,7 @@
             z-index: 10;
             color: #d32f2f;
             font-size: 3em;
+            position: relative;
         }
 
         .join-us {
@@ -98,6 +100,20 @@
             margin-top: 20px;
             animation-delay: 3s;
         }
+
+        .image-container {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .image-container img {
+            max-width: 90%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -106,6 +122,9 @@
         <div class="fade-in join-us">Join Us</div>
         <div class="fade-in wedding-of">For the wedding of</div>
     </div>
+    <div class="image-container">
+        <img src="images/wedding_photo.jpg" alt="Wedding Photo">
+    </div>
 
     <script>
         // Function to generate random hearts
@@ -113,11 +132,10 @@
             const heart = document.createElement('div');
             heart.classList.add('heart');
             heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            heart.style.animationDuration = Math.random() * 2 + 4 + 's'; // Random duration between 2s and 6s
             const size = Math.random() * 15 + 15;
             heart.style.width = size + 'px';
             heart.style.height = size + 'px';
-            heart.style.backgroundColor = 'red'; // Ensuring the heart is red
             document.querySelector('.hearts').appendChild(heart);
 
             setTimeout(() => {

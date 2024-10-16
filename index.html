@@ -27,9 +27,7 @@
 
         .heart {
             position: absolute;
-            bottom: -20000px; /* Start just below the bottom of the screen */
-            width: 20000px;
-            height: 20000px;
+            bottom: -2000px;
             background-color: red;
             transform: rotate(-45deg);
             opacity: 0;
@@ -40,14 +38,12 @@
         .heart::after {
             content: '';
             position: absolute;
-            width: 20000px;
-            height: 20000px;
             background-color: red;
             border-radius: 50%;
         }
 
         .heart::before {
-            top: -10000px;
+            top: -1000px;
             left: 0;
         }
 
@@ -133,14 +129,20 @@
             heart.classList.add('heart');
             heart.style.left = Math.random() * 100 + 'vw';
             heart.style.animationDuration = Math.random() * 2 + 4 + 's'; // Random duration between 2s and 6s
-            const size = Math.random() * 15 + 15;
+            const size = Math.random() * 30 + 10; // Random size between 10px and 40px
             heart.style.width = size + 'px';
             heart.style.height = size + 'px';
+            heart.style.borderRadius = size / 2 + 'px';
+            heart.style.opacity = 0.8 + Math.random() * 0.2; // Slight variation in opacity
+
+            heart.style.setProperty('--heart-size', size + 'px');
+            heart.style.setProperty('--heart-animation-duration', Math.random() * 5 + 3 + 's'); // Random animation duration
+
             document.querySelector('.hearts').appendChild(heart);
 
             setTimeout(() => {
                 heart.remove();
-            }, 5000); // Remove hearts after 5 seconds to prevent memory overflow
+            }, 7000); // Remove hearts after 7 seconds to prevent memory overflow
         }
 
         setInterval(createHeart, 300); // Create a heart every 300ms

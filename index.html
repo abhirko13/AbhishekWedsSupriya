@@ -3,19 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Message</title>
+    <title>Wedding Invitation</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f0f0; /* Light background color */
+            font-family: 'Arial', sans-serif;
         }
-        .heart {
-            font-size: 50px;
+        .fade {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>I love you, Supriya <span class="heart">❤️❤️❤️</span></h1>
+    <h1 class="fade" style="animation-delay: 1s;">Join Us</h1>
+    <h2 class="fade" style="animation-delay: 2s;">For the wedding of</h2>
+    
+    <script>
+        // Adding fade class on page load
+        document.addEventListener("DOMContentLoaded", function() {
+            const elements = document.querySelectorAll('.fade');
+            elements.forEach((el, index) => {
+                el.style.animationDelay = `${index + 1}s`;
+                el.classList.add('fade');
+            });
+        });
+    </script>
 </body>
 </html>

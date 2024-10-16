@@ -22,7 +22,7 @@ html,body{
 
 .heart:before {
     position: absolute;
-    top: -50%;
+    top: -500%;
     left: 0;
     display: block;
     content: "";

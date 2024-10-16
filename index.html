@@ -27,13 +27,12 @@
 
         .heart {
             position: absolute;
-            bottom: -20000px; /* Start just below the bottom of the screen */
-            width: 200px;
-            height: 200px;
+            width: 2000px;
+            height: 2000px;
             background-color: red;
             transform: rotate(-45deg);
             opacity: 0;
-            animation: floatUp 5s infinite ease-in-out;
+            animation: float 3s infinite ease-in-out;
         }
 
         .heart::before,
@@ -47,16 +46,16 @@
         }
 
         .heart::before {
-            top: -10000px;
+            top: -10px;
             left: 0;
         }
 
         .heart::after {
-            left: 10000px;
+            left: 1000px;
             top: 0;
         }
 
-        @keyframes floatUp {
+        @keyframes float {
             0% {
                 transform: translateY(0) scale(0.5) rotate(-45deg);
                 opacity: 1;
@@ -65,7 +64,7 @@
                 opacity: 0.7;
             }
             100% {
-                transform: translateY(-100vh) scale(1) rotate(-45deg);
+                transform: translateY(-200px) scale(1) rotate(-45deg);
                 opacity: 0;
             }
         }
@@ -111,7 +110,7 @@
 
         .image-container img {
             max-width: 90%;
-            border-radius: 10000px;
+            border-radius: 10px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
         }
     </style>
@@ -132,7 +131,7 @@
             const heart = document.createElement('div');
             heart.classList.add('heart');
             heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 2 + 4 + 's'; // Random duration between 2s and 6s
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
             const size = Math.random() * 15 + 15;
             heart.style.width = size + 'px';
             heart.style.height = size + 'px';

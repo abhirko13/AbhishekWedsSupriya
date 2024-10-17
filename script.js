@@ -1,7 +1,7 @@
 // Function to generate random hearts using the uploaded image
 function createHeart() {
     const heart = document.createElement('img');
-    heart.src = 'png-transparent-heart-red-heart-thumbnail.png'; // Replace with the correct path to the uploaded image
+    heart.src = 'https://assets.onecompiler.app/42vcmw4jh/42vcmw6nb/png-transparent-heart-red-heart-thumbnail.png'; // Replace with the correct path to the uploaded image
     heart.classList.add('heart');
     heart.style.left = Math.random() * 100 + 'vw';
     heart.style.animationDuration = (Math.random() * 3 + 2) + 's'; // Random duration between 2s and 5s

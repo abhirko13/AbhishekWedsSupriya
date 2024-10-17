@@ -7,7 +7,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Cursive', 'Arial', sans-serif;
 }
 
 .hearts {
@@ -28,28 +28,14 @@ body, html {
 @keyframes floatUp {
     0% {
         transform: translateY(0) scale(0.5);
-        opacity: 1; /* Start fully visible */
+        opacity: 1;
     }
     50% {
-        opacity: 0.8; /* Midway opacity */
+        opacity: 0.8;
     }
     100% {
         transform: translateY(-100vh) scale(1);
-        opacity: 0; /* Fade out at the top */
-    }
-}
-
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-}
-
-@keyframes fadeIn {
-    0% {
         opacity: 0;
-    }
-    100% {
-        opacity: 1;
     }
 }
 
@@ -57,17 +43,28 @@ body, html {
     text-align: center;
     z-index: 10;
     color: #d32f2f;
-    font-size: 3em;
-    position: relative;
+    font-size: 2.5em;
+    position: absolute;
 }
 
-.join-us {
-    animation-delay: 1s;
+.fade-in-out {
+    opacity: 0;
+    animation: fadeInOut 8s forwards;
 }
 
-.wedding-of {
-    margin-top: 20px;
-    animation-delay: 3s;
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .image-container {

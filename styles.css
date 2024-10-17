@@ -1,0 +1,85 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -20px;
+    opacity: 0;
+    animation: floatUp 5s infinite ease-in-out;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 1; /* Start fully visible */
+    }
+    50% {
+        opacity: 0.8; /* Midway opacity */
+    }
+    100% {
+        transform: translateY(-100vh) scale(1);
+        opacity: 0; /* Fade out at the top */
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.text-container {
+    text-align: center;
+    z-index: 10;
+    color: #d32f2f;
+    font-size: 3em;
+    position: relative;
+}
+
+.join-us {
+    animation-delay: 1s;
+}
+
+.wedding-of {
+    margin-top: 20px;
+    animation-delay: 3s;
+}
+
+.image-container {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.image-container img {
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}

@@ -12,19 +12,21 @@
             justify-content: center;
             align-items: center;
             margin-top: 20px; /* Add space between text and button */
-            height: 200px; /* Adjust as needed */
+            height: 200px; /* Adjusted height to focus on the hands */
+            width: 100%; /* Full width for flexibility */
+            overflow: hidden; /* Hide any overflow from the image */
         }
 
         .hands-image {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensure the image covers the entire area */
+            width: 100;
+            height: 100%; /* Use full height to ensure hands are fully visible */
+            object-fit: contain; /* Contain the image without stretching */
             opacity: 0;
             z-index: 1; /* Ensure it stays behind the button */
-            border-radius: 15px; /* Rounded corners for a softer look */
             animation: fadeInImage 1s forwards;
-            animation-delay: 11s; /* Delay the appearance of the image by 12 seconds */
+            animation-delay: 12s; /* Delay the appearance of the image by 12 seconds */
+            border: none; /* Remove any border */
         }
 
         @keyframes fadeInImage {
@@ -50,7 +52,7 @@
             transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
             display: none; /* Initially hidden */
             animation: fadeInButton 1s forwards;
-            animation-delay: 13s; /* Delay the button to match the image */
+            animation-delay: 12s; /* Delay the button to match the image */
         }
 
         @keyframes fadeInButton {
@@ -78,8 +80,8 @@
     <div class="text-container">
         <div class="fade-in-out blessing" style="animation-delay: 9s; opacity: 0; font-size: 40px;">Your Presence Is Our Blessing</div>
         <div class="image-container">
-            <img src="—Pngtree—linear hand drawn style praying_5437744.png" alt="Hands extending invitation" class="hands-image">
-            <button id="downloadButton">Download Invitation</button>
+            <img src="https://assets.onecompiler.app/42vcmw4jh/42vfkrfpm/%E2%80%94Pngtree%E2%80%94linear%20hand%20drawn%20style%20praying_5437744.png" alt="Hands extending invitation" class="hands-image">
+            <button id="downloadButton">INVITATION</button>
         </div>
         <div class="fade-in-out join-us" style="animation-delay: 1s; font-size: 36px;">We Cordially Invite You</div>
         <div class="fade-in-out wedding" style="animation-delay: 2s; font-size: 32px;">For the wedding</div>

@@ -1,3 +1,4 @@
+
 // Function to generate random hearts using the uploaded image
 function createHeart() {
     const heart = document.createElement('img');
@@ -17,3 +18,22 @@ function createHeart() {
 }
 
 setInterval(createHeart, 300); // Create a heart every 300ms
+
+document.addEventListener('DOMContentLoaded', () => {
+    const downloadButton = document.getElementById('downloadButton');
+
+    // Show download button after all animations
+    setTimeout(() => {
+        downloadButton.style.display = 'block';
+    }, 12000); // 12 seconds delay to match the text fade out
+
+    // Add click event to download button
+    downloadButton.addEventListener('click', () => {
+        const link = document.createElement('a');
+        link.href = 'https://assets.onecompiler.app/42vcmw4jh/42vfkrfpm/Green%20and%20White%20Wedding%20Invitation%20(1).jpg	'; // Replace with your actual image filename
+        link.download = 'Wedding_Invitation.jpg'; // Name for the downloaded file
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+});

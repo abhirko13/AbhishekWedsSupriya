@@ -26,13 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
         downloadButton.style.display = 'block';
     }, 12000); // 12 seconds delay to match the text fade out
 
-    // Add click event to download button
+    // Simplified click event to open the image
     downloadButton.addEventListener('click', () => {
-        const link = document.createElement('a');
-        link.href = 'https://raw.githubusercontent.com/abhirko13/AbhishekWedsSupriya/main/Green%20and%20White%20Wedding%20Invitation%20(1).jpg'; // Direct raw file link
-        link.download = 'Wedding_Invitation.jpg'; // Name for the downloaded file
-        document.body.appendChild(link);
-        link.click(); // This simulates a click on the link
-        document.body.removeChild(link);
+        window.open('https://raw.githubusercontent.com/abhirko13/AbhishekWedsSupriya/main/Green%20and%20White%20Wedding%20Invitation%20(1).jpg');
     });
 });

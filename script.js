@@ -26,8 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
         downloadButton.style.display = 'block';
     }, 12000); // 12 seconds delay to match the text fade out
 
-    // Simplified click event to open the image
+    // Add click event to download button
     downloadButton.addEventListener('click', () => {
-        window.open('https://assets.onecompiler.app/42vcmw4jh/42vfkrfpm/Green%20and%20White%20Wedding%20Invitation%20(1).jpg');
+        const link = document.createElement('a');
+        link.href = 'https://assets.onecompiler.app/42vcmw4jh/42vfkrfpm/Green%20and%20White%20Wedding%20Invitation%20(1).jpg'; // GitHub raw file link
+        link.download = 'Wedding_Invitation.jpg'; // Name for the downloaded file
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     });
 });

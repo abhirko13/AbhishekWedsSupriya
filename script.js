@@ -1,3 +1,23 @@
+// Function to generate random hearts using the uploaded image
+function createHeart() {
+    const heart = document.createElement('img');
+    heart.src = 'png-transparent-heart-red-heart-thumbnail.png'; // Replace with the correct path to the uploaded image
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (Math.random() * 3 + 2) + 's'; // Random duration between 2s and 5s
+    const size = Math.random() * 30 + 15; // Random size between 15px and 45px
+    heart.style.width = size + 'px';
+    heart.style.height = 'auto';
+
+    document.querySelector('.hearts').appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000); // Remove hearts after 5 seconds to prevent memory overflow
+}
+
+setInterval(createHeart, 300); // Create a heart every 300ms
+
 document.addEventListener('DOMContentLoaded', () => {
     const downloadButton = document.getElementById('downloadButton');
 
@@ -9,12 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add click event to download button
     downloadButton.addEventListener('click', () => {
         const link = document.createElement('a');
-        link.href = 'https://raw.githubusercontent.com/abhirko13/AbhishekWedsSupriya/main/Green%20and%20White%20Wedding%20Invitation%20(1).jpg'; // Direct link to the image
+        link.href = 'https://raw.githubusercontent.com/abhirko13/AbhishekWedsSupriya/main/Green%20and%20White%20Wedding%20Invitation%20(1).jpg'; // Direct raw file link
         link.download = 'Wedding_Invitation.jpg'; // Name for the downloaded file
-        
-        // Trigger the download
         document.body.appendChild(link);
-        link.click();
+        link.click(); // This simulates a click on the link
         document.body.removeChild(link);
     });
 });

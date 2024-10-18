@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add click event to download button
     downloadButton.addEventListener('click', () => {
         const link = document.createElement('a');
-        link.href = 'Green and White Wedding Invitation (1).jpg	'; // Replace with your actual image filename
+        link.href = 'https://assets.onecompiler.app/42vcmw4jh/42vfkrfpm/Green%20and%20White%20Wedding%20Invitation%20(1).jpg	'; // Replace with your actual image filename
         link.download = 'Wedding_Invitation.jpg'; // Name for the downloaded file
         document.body.appendChild(link);
         link.click();

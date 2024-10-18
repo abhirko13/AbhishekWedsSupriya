@@ -47,23 +47,13 @@
             justify-content: center;
             align-items: center;
             height: 200px; /* Adjusted height */
-            width: 300px; /* Adjusted width for better centering */
+            width: 500px; /* Adjusted width for better centering */
             overflow: hidden; /* Hide any overflow from the image */
             margin-top: 20px; /* Space between text and button */
             background-color: transparent; /* Ensure no background color */
         }
 
-        .hands-image {
-            position: absolute;
-            width: auto; /* Maintain aspect ratio */
-            height: 100%; /* Use full height to ensure hands are fully visible */
-            object-fit: contain; /* Ensure the image fits without cropping */
-            opacity: 0; /* Initially hidden */
-            z-index: 1; /* Ensure it stays behind the button */
-            animation: fadeInImage 1s forwards;
-            animation-delay: 12s; /* Delay the appearance of the image by 12 seconds */
-            filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0)); /* Remove any drop shadows */
-        }
+        
 
         @keyframes fadeInImage {
             from {
@@ -116,7 +106,6 @@
     <div class="text-container">
         <div class="fade-in-out blessing" style="animation-delay: 9s; font-size: 40px;">Your Presence Is Our Blessing</div>
         <div class="image-container">
-            <img src="—Pngtree—linear hand drawn style praying_5437744.png.png" alt="Hands extending invitation" class="hands-image">
             <button id="downloadButton">INVITATION</button>
         </div>
         <div class="fade-in-out join-us" style="animation-delay: 1s; font-size: 36px;">We Cordially Invite You</div>

@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show download button after all animations
     setTimeout(() => {
         downloadButton.style.display = 'block';
-    }, 9000); // 12 seconds delay to match the text fade out
+    }, 12000); // 12 seconds delay to match the text fade out
 
     // Add click event to download button
     downloadButton.addEventListener('click', () => {

@@ -28,6 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Simplified click event to open the image
     downloadButton.addEventListener('click', () => {
-        window.open('https://raw.githubusercontent.com/abhirko13/AbhishekWedsSupriya/main/Green%20and%20White%20Wedding%20Invitation%20(1).jpg');
+        window.open('https://assets.onecompiler.app/42vcmw4jh/42vfkrfpm/Green%20and%20White%20Wedding%20Invitation%20(1).jpg');
     });
 });

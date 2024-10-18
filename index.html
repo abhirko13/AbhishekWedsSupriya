@@ -6,27 +6,63 @@
     <title>Wedding Invitation</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f7f3f0; /* Light background to blend with image */
+            font-family: 'Times New Roman', serif;
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 10px; /* Space between text elements */
+            max-width: 600px; /* Optional: To prevent text from spanning too wide */
+        }
+
+        .fade-in-out {
+            opacity: 0;
+            animation: fadeInOut 1s forwards;
+        }
+
+        @keyframes fadeInOut {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         .image-container {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 20px; /* Add space between text and button */
-            height: 200px; /* Adjusted height to focus on the hands */
-            width: 100%; /* Full width for flexibility */
+            height: 200px; /* Adjusted height */
+            width: 300px; /* Adjusted width for better centering */
             overflow: hidden; /* Hide any overflow from the image */
+            margin-top: 20px; /* Space between text and button */
+            background-color: transparent; /* Ensure no background color */
         }
 
         .hands-image {
             position: absolute;
-            width: 100;
+            width: auto; /* Maintain aspect ratio */
             height: 100%; /* Use full height to ensure hands are fully visible */
-            object-fit: contain; /* Contain the image without stretching */
-            opacity: 0;
+            object-fit: contain; /* Ensure the image fits without cropping */
+            opacity: 0; /* Initially hidden */
             z-index: 1; /* Ensure it stays behind the button */
             animation: fadeInImage 1s forwards;
             animation-delay: 12s; /* Delay the appearance of the image by 12 seconds */
-            border: none; /* Remove any border */
+            filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0)); /* Remove any drop shadows */
         }
 
         @keyframes fadeInImage {
@@ -78,7 +114,7 @@
 <body>
     <div class="hearts"></div>
     <div class="text-container">
-        <div class="fade-in-out blessing" style="animation-delay: 9s; opacity: 0; font-size: 40px;">Your Presence Is Our Blessing</div>
+        <div class="fade-in-out blessing" style="animation-delay: 9s; font-size: 40px;">Your Presence Is Our Blessing</div>
         <div class="image-container">
             <img src="https://assets.onecompiler.app/42vcmw4jh/42vfkrfpm/%E2%80%94Pngtree%E2%80%94linear%20hand%20drawn%20style%20praying_5437744.png" alt="Hands extending invitation" class="hands-image">
             <button id="downloadButton">INVITATION</button>

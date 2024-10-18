@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add click event to download button
     downloadButton.addEventListener('click', () => {
         const link = document.createElement('a');
-        link.href = 'https://assets.onecompiler.app/42vcmw4jh/42vfkrfpm/Green%20and%20White%20Wedding%20Invitation%20(1).jpg'; // GitHub raw file link
-        link.download = 'Wedding_Invitation.jpg'; // Name for the downloaded file
+        link.href = 'https://raw.githubusercontent.com/abhirko13/AbhishekWedsSupriya/main/Green%20and%20White%20Wedding%20Invitation%20(1).jpg'; // GitHub raw file link
+        link.download = 'Abhshek_Wedding_Invitation.jpg'; // Name for the downloaded file
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

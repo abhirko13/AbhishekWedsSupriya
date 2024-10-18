@@ -1,4 +1,3 @@
-
 // Function to generate random hearts using the uploaded image
 function createHeart() {
     const heart = document.createElement('img');
@@ -30,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add click event to download button
     downloadButton.addEventListener('click', () => {
         const link = document.createElement('a');
-        link.href = 'https://raw.githubusercontent.com/abhirko13/AbhishekWedsSupriya/refs/heads/main/Green%20and%20White%20Wedding%20Invitation%20(1).jpg'; // Replace with your actual image filename
+        link.href = 'https://raw.githubusercontent.com/abhirko13/AbhishekWedsSupriya/main/Green%20and%20White%20Wedding%20Invitation%20(1).jpg'; // GitHub raw file link
         link.download = 'Wedding_Invitation.jpg'; // Name for the downloaded file
         document.body.appendChild(link);
         link.click();

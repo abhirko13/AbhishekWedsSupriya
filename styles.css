@@ -49,7 +49,7 @@ body, html {
 
 .fade-in-out {
     opacity: 0;
-    animation: fadeInOut 3s forwards;
+    animation: fadeInOut 60s forwards;
 }
 
 @keyframes fadeInOut {

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f7f3f0; /* Light background to blend with image */
+            font-family: 'Arial', serif;
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 10px; /* Space between text elements */
+            max-width: 600px; /* Optional: To prevent text from spanning too wide */
+        }
+
+        .fade-in-out {
+            opacity: 0;
+            animation: fadeInOut 1s forwards;
+        }
+
+        @keyframes fadeInOut {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px; /* Adjusted height */
+            width: 600px; /* Adjusted width for better centering */
+            overflow: hidden; /* Hide any overflow from the image */
+            margin-top: 20px; /* Space between text and button */
+            background-color: transparent; /* Ensure no background color */
+        }
+
+        
+
+        @keyframes fadeInImage {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 0.8; /* Make it slightly transparent */
+            }
+        }
+
+        #downloadButton {
+            position: relative;
+            z-index: 2; /* Place the button above the image */
+            background-color: #d32f2f; /* Red background */
+            color: #fff; /* White text */
+            border: none; /* No border */
+            padding: 15px 30px; /* Padding for a larger clickable area */
+            font-size: 1.2em; /* Larger font size */
+            border-radius: 25px; /* Rounded corners */
+            cursor: pointer; /* Change cursor to pointer */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+            display: none; /* Initially hidden */
+            animation: fadeInButton 1s forwards;
+            animation-delay: 8s; /* Delay the button to match the image */
+        }
+
+        @keyframes fadeInButton {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        #downloadButton:hover {
+            background-color: #b71c1c; /* Darker red on hover */
+            transform: scale(1.05); /* Slightly larger on hover */
+        }
+
+        #downloadButton:active {
+            background-color: #880e0e; /* Even darker red when clicked */
+            transform: scale(0.95); /* Shrink slightly when clicked */
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts"></div>
+    <div class="text-container">
+        <div class="fade-in-out blessing" style="animation-delay: 7s; font-size: 40px;">Your Presence Is Our Blessing</div>
+        <div class="image-container">
+            <button id="downloadButton">INVITATION</button>
+        </div>
+        <div class="fade-in-out join-us" style="animation-delay: 1s; font-size: 36px;">We Cordially Invite You</div>
+        <div class="fade-in-out wedding" style="animation-delay: 2s; font-size: 32px;">For the wedding</div>
+        <div class="fade-in-out of" style="animation-delay: 3s; font-size: 28px;">Of</div>
+        <div class="fade-in-out abhishek" style="animation-delay: 4s; font-size: 45px;font-style: italic;">Abhishek</div>
+        <div class="fade-in-out and" style="animation-delay: 5s; font-size: 24px;">&</div>
+        <div class="fade-in-out supriya" style="animation-delay: 6s; font-size: 45px;font-style: italic;">Supriya</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
